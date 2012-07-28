@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.test.sourceEncoding>UTF-8</project.test.sourceEncoding>
+        <flex.flashPlayer.command>flashplayerdebugger</flex.flashPlayer.command>
+        <flex.mojos.version>4.0-SNAPSHOT</flex.mojos.version>
+        <flex.sdk.version>4.6.b.23201</flex.sdk.version>
+    </properties>
+
+    <groupId>org.cloudladder</groupId>
+    <artifactId>locomoco-parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>locomoco-parent</name>
+    <url>http://github.com/uzzu/locomoco</url>
+    <description>locomoco is a MVVM framework for ActionScript3.0</description>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/uzzu/locomoco/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>uzzu</id>
+            <name>Hirokazu Uzu</name>
+            <email>himeatball at gmail dot com</email>
+            <roles>
+                <role>Author Developer</role>
+            </roles>
+            <timezone>+9</timezone>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>maven-repository</id>
+            <name>Cloudladder Maven2 Repository</name>
+            <url>http://github.com/uzzu/maven-repository/raw/master/release</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshot-repository</id>
+            <name>Cloudladder Maven2 Repository</name>
+            <url>http://github.com/uzzu/maven-repository/raw/master/snapshots</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <modules>
+        <module>locomoco</module>
+    </modules>
+
+    <build>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flex.mojos.version}</version>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <type>pom</type>
+                        <version>${flex.sdk.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <compilerWarning>
+                        <warn-no-constructor>false</warn-no-constructor>
+                    </compilerWarning>
+                    <staticLinkRuntimeSharedLibraries>true</staticLinkRuntimeSharedLibraries>
+                    <version_major>10</version_major>
+                    <version_minoer>2</version_minoer>
+                    <version_revision>0</version_revision>
+                    <coverage>true</coverage>
+                    <aggregate>true</aggregate>
+                    <testTimeout>60000</testTimeout>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>4.1-RC2</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-as3</artifactId>
+            <version>1.1</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>flex-mojos-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Cairngorm 3 maven repository</id>
+            <url>http://svn.code.sf.net/adobe/cairngorm/code/cairngorm3/maven-repository/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flex-mojos-plugin-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
