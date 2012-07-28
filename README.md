@@ -1,4 +1,4 @@
 locomoco
 ========
 
-locomoco is a MVP framework for ActionScript3.0
+locomoco is a MVVM framework for ActionScript3.0
