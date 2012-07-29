@@ -84,9 +84,10 @@
                     <version_minoer>2</version_minoer>
                     <version_revision>0</version_revision>
                     <coverage>true</coverage>
-                    <coveragereportformat>
+                    <coverageProvider>cobertura</coverageProvider>
+                    <coverageReportFormat>
                         <param>xml</param>
-                    </coveragereportformat>
+                    </coverageReportFormat>
                     <testFailureIgnore>true</testFailureIgnore>
                     <aggregate>true</aggregate>
                     <testTimeout>60000</testTimeout>
