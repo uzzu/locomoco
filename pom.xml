@@ -8,10 +8,6 @@
         <flex.flashPlayer.command>flashplayer</flex.flashPlayer.command>
         <flex.mojos.version>4.0-SNAPSHOT</flex.mojos.version>
         <flex.sdk.version>4.6.b.23201</flex.sdk.version>
-        <sonar.language>flex</sonar.language>
-        <sonar.dynamicanalysis>reuseReports</sonar.dynamicanalysis>
-        <sonar.surefire.reportspath>target/surefire-reports</sonar.surefire.reportspath>
-        <sonar.cobertura.reportpath>target/coverage/coverage.xml</sonar.cobertura.reportpath>
     </properties>
 
     <groupId>org.cloudladder</groupId>
